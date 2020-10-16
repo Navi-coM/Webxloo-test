@@ -372,7 +372,7 @@ template {
   font-weight: normal;
 }
 .header {
-  background: linear-gradient(#394139, #787474);
+  background: linear-gradient(#395562, #787474);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -468,7 +468,7 @@ template {
 }
 .nav .menu__link span {
   position: absolute;
-  bottom: -80px;
+  bottom: -60px;
   left: 0;
   margin-top: 10px;
   font-size: 15px;
@@ -480,6 +480,62 @@ template {
 .main {
   background: url(../img/main-background.png) center no-repeat;
   background-size: cover;
+}
+
+.slider {
+  width: 77%;
+  margin: 0 auto;
+  position: relative;
+  top: -20px;
+  height: 490px;
+  overflow: hidden;
+}
+.slider-item {
+  position: relative;
+}
+.slider-item img {
+  display: block;
+  width: 100%;
+}
+.slider-item:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 56px;
+  width: 100%;
+  background: rgba(45, 64, 81, 0.83);
+}
+.slider .slick-list {
+  overflow: hidden;
+  height: 100%;
+}
+.slider .slick-track {
+  display: flex;
+  height: 100%;
+}
+.slider .slick-arrow {
+  position: absolute;
+  bottom: 9px;
+  font-size: 0;
+  width: 33px;
+  height: 40px;
+  border: none;
+  z-index: 3;
+  cursor: pointer;
+}
+.slider .slick-arrow:focus {
+  border: none;
+  outline: none;
+}
+.slider .slick-arrow.slick-prev {
+  left: 10px;
+  background: url(../img/right_turn.png) 0 0/100% no-repeat;
+  transform: rotate(180deg);
+}
+.slider .slick-arrow.slick-next {
+  right: 10px;
+  background: url(../img/right_turn.png) 0 0/100% no-repeat;
 }
 
 .main-services {
@@ -529,4 +585,51 @@ template {
 }
 .main-services .services-item-break {
   width: 100%;
+}
+
+.main-offer {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+  background: #395562;
+  color: #ffffff;
+}
+.main-offer .offer-content {
+  width: 25%;
+  max-width: 230px;
+  margin: 0 30px;
+  padding: 20px 0;
+  text-align: center;
+  font-family: "Roboto";
+  text-transform: uppercase;
+  position: relative;
+}
+.main-offer .offer-content__title {
+  margin-bottom: 30px;
+}
+.main-offer .offer-content__text {
+  font-family: "AlegreySans";
+  font-size: 15px;
+  line-height: 1.5;
+  color: #c3d7da;
+  margin-bottom: 30px;
+}
+.main-offer .offer-content__link {
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+.main-offer .offer-content:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 65%;
+  transform: translateX(-50%);
+  height: 2px;
+  background: rgba(100, 100, 100, 0.96);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
 }

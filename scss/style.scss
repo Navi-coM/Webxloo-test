@@ -4,7 +4,7 @@
 @import "mixins.scss";
 
 .header {
-    background: linear-gradient(#394139, #787474);
+    background: linear-gradient(#395562, #787474);
     @include dfSpaBetAliCent; 
 }    
     .header-logo {
@@ -74,7 +74,7 @@
                 }
                 & span {
                     position: absolute;
-                    bottom: -80px;
+                    bottom: -60px;
                     left: 0;
                     margin-top: 10px;
                     font-size: 15px;
@@ -89,46 +89,151 @@
     background: url(../img/main-background.png) center no-repeat;
     background-size: cover;
 }
-.main-services {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    .services-item {
-        display: flex;
-        width: 50%;
-        max-width: 450px;
-        height: 220px;
-        margin: 20px 20px;
-        &__img {
-            background: url(../img/background-item.png) right no-repeat;
-            background-size: cover;
-            width: 100%;
+    .slider {
+        width: 77%;
+        margin: 0 auto;
+        position: relative;
+        top: -20px;
+        height: 490px;
+        overflow: hidden;
+        &-item {
+            position: relative;
+            & img {
+                display: block;
+                width: 100%;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 56px;
+                width: 100%;
+                background: rgb(45 64 81 / 83%);
+            }
+        }
+
+        .slick-list {
+            overflow: hidden;
             height: 100%;
         }
-        &-content {
+        .slick-track {
+            display: flex;
+            height: 100%;
+        }
+        .slick-arrow {
+            position: absolute;
+            bottom: 9px;
+            font-size: 0;
+            width: 33px;
+            height: 40px;
+            border: none;
+            z-index: 3;
+            cursor: pointer;
+            &:focus {
+                border: none;
+                outline: none;
+            }
+        }
+        .slick-arrow.slick-prev {
+            left: 10px;
+            background: url(../img/right_turn.png) 0 0 / 100%  no-repeat;
+            transform: rotate(180deg);
+        }
+        .slick-arrow.slick-next {
+            right: 10px;
+            background: url(../img/right_turn.png) 0 0 / 100%  no-repeat;
+            
+        }
+    }
+    .main-services {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .services-item {
+            display: flex;
+            width: 50%;
+            max-width: 450px;
+            height: 220px;
+            margin: 20px 20px;
+            &__img {
+                background: url(../img/background-item.png) right no-repeat;
+                background-size: cover;
+                width: 100%;
+                height: 100%;
+            }
+            &-content {
+                position: relative;
+                padding: 20px;
+                text-align: justify;
+                background-color: rgb(100,120,140);
+                color: $textColorLight;
+                &__title {
+                    font-family: "Roboto";
+                    font-size: 25px;
+                    margin-bottom: 10px;
+                }
+                &:before {
+                    content: "";
+                    @include psevdElTriangle;
+                    border: 30px solid transparent;
+                    border-top: 30px solid rgb(100,120,140);
+                    left: -60px;
+                    top: 50%;
+                    transform: rotate(90deg) translateX(-50%);
+                }
+            }
+            &-break {
+                width: 100%;
+            }
+        }
+    }
+    .main-offer {
+        display: flex;
+        justify-content: center;
+        padding: 50px 0;
+        background: #395562;
+        color: $textColorLight;
+        .offer-content {
+            width: 25%;
+            max-width: 230px;
+            margin: 0 30px;
+            padding: 20px 0;
+            text-align: center;
+            font-family: "Roboto";
+            text-transform: uppercase;
             position: relative;
-            padding: 20px;
-            text-align: justify;
-            background-color: rgb(100,120,140);
-            color: $textColorLight;
             &__title {
-                font-family: "Roboto";
-                font-size: 25px;
-                margin-bottom: 10px;
+                margin-bottom: 30px;
             }
-            &:before {
+            &__text {
+                font-family: "AlegreySans";
+                font-size: 15px;
+                line-height: 1.5;
+                color: $textColorGrey;
+                margin-bottom: 30px;
+            }
+            &__link {
+                color: $textColorLight;
+                margin-bottom: 30px;
+            }
+            &:after {
                 content: "";
-                @include psevdElTriangle;
-                border: 30px solid transparent;
-                border-top: 30px solid rgb(100,120,140);
-                left: -60px;
-                top: 50%;
-                transform: rotate(90deg) translateX(-50%);
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 65%;
+                transform: translateX(-50%);
+                height: 2px;
+                background: rgb(100 100 100 / 96%);
             }
         }
-        &-break {
-            width: 100%;
-        }
+        
+    }
+.footer {
+    &-content {
+        display: flex;
+    justify-content: center;
     }
 }
