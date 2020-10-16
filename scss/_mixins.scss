@@ -1,0 +1,21 @@
+@mixin dfSpaBetAliCent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin fontMenu {
+    font-family: "AlegreySans";
+    text-transform: uppercase;
+    font-size: 25px;
+    color: #fff;
+}
+
+@mixin psevdElTriangle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 10px solid transparent; 
+    border-top: 10px solid #fff;
+}

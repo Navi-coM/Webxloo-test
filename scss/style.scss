@@ -2,3 +2,104 @@
 @import "fonts.scss";
 @import "variables.scss";
 @import "mixins.scss";
+
+.header {
+    background: linear-gradient(#394139, #787474);
+    @include dfSpaBetAliCent; 
+}    
+    .header-logo {
+        @include dfSpaBetAliCent; 
+        justify-content: space-evenly;
+        flex-grow: 2;
+        margin-right: 40px;
+        &__img {
+            width: 140px;
+            position: relative;
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: -30px;
+                width: 1px;
+                height: 100%;
+                background: rgb(123 151 123 / 80%);
+            }
+            & img{
+                display: block;
+                width: 100%;
+            }
+        }
+        &__slogan {
+            color: #fff;
+            font-style: italic;
+        }
+    }
+    .nav {
+        flex-grow: 6;
+        height: 170px;
+        .menu {
+            @include dfSpaBetAliCent;
+            justify-content: space-around;
+            height: 100%;
+            &__item {
+                position: relative;
+                height: 100%;
+                & span {
+                   color:  $textColorGrey;
+                   font-style: italic;
+                }
+            }
+            &__link {
+                @include dfSpaBetAliCent;
+                flex-direction: column;
+                justify-content: center;
+                position: relative;
+                @include fontMenu; 
+                height: 100%;
+                padding-top: 10px;
+                &:hover:before {
+                    content: "";
+                    @include psevdElTriangle;
+                }
+                &:hover:after {
+                    content: "";
+                    @include psevdElTriangle;
+                    border: 5px solid transparent; 
+                    border-top: 5px solid #fff;
+                    top: 57%;
+                }
+                &:hover > span {
+                    bottom: -10px;
+                    z-index: 1;
+                }
+                & span {
+                    position: absolute;
+                    bottom: -80px;
+                    left: 0;
+                    margin-top: 10px;
+                    font-size: 15px;
+                    position: relative;
+                    transition: bottom 0.35s;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+.main {
+    background: url(../img/main-background.png) center no-repeat;
+    background-size: cover;
+}
+.main-services {
+    width: 100%;
+    display: flex;
+    .services-item {
+        display: flex;
+        width: 50%;
+        height: 140px;
+        &__img {
+            background: url(../img/background-item.png) center no-repeat;
+            background-size: cover;
+            height: 100%;
+        }
+    }
+}
